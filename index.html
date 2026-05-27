@@ -2,122 +2,283 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Indhuja - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Indhuja S | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f4f4f4;
-      color: #333;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
     }
 
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f3f4f6;
+      color:#333;
+      line-height:1.7;
     }
 
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      background-color: #444;
+    /* HEADER */
+
+    header{
+      height:100vh;
+      background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+      url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:20px;
     }
 
-    nav ul li {
-      margin: 0 15px;
+    header h1{
+      font-size:60px;
+      letter-spacing:3px;
+      margin-bottom:10px;
     }
 
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 15px;
-      display: block;
+    header p{
+      font-size:22px;
+      color:#ddd;
+      margin-bottom:25px;
     }
 
-    nav ul li a:hover {
-      background-color: #555;
+    .btn{
+      display:inline-block;
+      padding:12px 28px;
+      background:#2563eb;
+      color:white;
+      text-decoration:none;
+      border-radius:30px;
+      transition:0.3s;
+      font-weight:500;
     }
 
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-      background-color: #fff;
-      margin-top: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .btn:hover{
+      background:#1e40af;
+      transform:translateY(-3px);
     }
 
-    h2 {
-      color: #333;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 10px;
+    /* NAVBAR */
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:#111827;
+      box-shadow:0 2px 10px rgba(0,0,0,0.2);
     }
 
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
+    nav ul{
+      display:flex;
+      justify-content:center;
+      list-style:none;
+      flex-wrap:wrap;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      padding:18px 25px;
+      display:block;
+      transition:0.3s;
+      font-weight:500;
     }
 
-    input, textarea {
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
+    nav ul li a:hover{
+      background:#2563eb;
     }
 
-    button {
-      padding: 10px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      border-radius: 4px;
+    /* SECTION */
+
+    section{
+      max-width:1100px;
+      margin:50px auto;
+      padding:40px;
     }
 
-    button:hover {
-      background-color: #555;
+    section h2{
+      text-align:center;
+      font-size:35px;
+      margin-bottom:40px;
+      color:#111827;
+      position:relative;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #333;
-      color: #fff;
-      margin-top: 20px;
+    section h2::after{
+      content:'';
+      width:80px;
+      height:4px;
+      background:#2563eb;
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:-10px;
+      border-radius:5px;
     }
 
-    @media (max-width: 600px) {
-      nav ul {
-        flex-direction: column;
+    /* ABOUT */
+
+    .about-box{
+      background:white;
+      padding:35px;
+      border-radius:15px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.1);
+      text-align:center;
+    }
+
+    /* EDUCATION */
+
+    .edu-card{
+      background:white;
+      padding:25px;
+      margin-bottom:25px;
+      border-left:5px solid #2563eb;
+      border-radius:10px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .edu-card:hover{
+      transform:translateY(-5px);
+    }
+
+    /* SKILLS */
+
+    .skills-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .skill-card{
+      background:white;
+      padding:30px;
+      border-radius:15px;
+      text-align:center;
+      box-shadow:0 5px 20px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .skill-card:hover{
+      transform:translateY(-8px);
+      background:#2563eb;
+      color:white;
+    }
+
+    /* PROJECTS */
+
+    .project-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .project-card{
+      background:white;
+      padding:25px;
+      border-radius:15px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .project-card:hover{
+      transform:scale(1.03);
+    }
+
+    .project-card h3{
+      margin-bottom:15px;
+      color:#2563eb;
+    }
+
+    /* CONTACT */
+
+    .contact-box{
+      background:white;
+      padding:35px;
+      border-radius:15px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.1);
+      text-align:center;
+    }
+
+    .contact-box p{
+      margin-bottom:15px;
+      font-size:18px;
+    }
+
+    .contact-box a{
+      color:#2563eb;
+      text-decoration:none;
+    }
+
+    .contact-box a:hover{
+      text-decoration:underline;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#111827;
+      color:white;
+      text-align:center;
+      padding:25px;
+      margin-top:40px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      header h1{
+        font-size:38px;
       }
 
-      nav ul li {
-        margin: 0;
+      header p{
+        font-size:18px;
       }
+
+      nav ul{
+        flex-direction:column;
+      }
+
+      section{
+        padding:25px;
+      }
+
     }
+
   </style>
 </head>
+
 <body>
 
+  <!-- HEADER -->
+
   <header>
-    <h1>Indhuja.S</h1>
-    <p>Front end developer | Photographer | Editor</p>
+
+    <h1>INDHUJA S</h1>
+
+    <p>Frontend Developer | Photographer | Editor</p>
+
+    <a href="#contact" class="btn">Contact Me</a>
+
   </header>
 
+  <!-- NAVBAR -->
+
   <nav>
+
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
@@ -125,53 +286,143 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
   </nav>
 
+  <!-- ABOUT -->
+
   <section id="about">
-    <h2>About me</h2>
-    <p>I'm,Looking for an opportunity to prove and improve my skills of photography and front end development.</p>
+
+    <h2>About Me</h2>
+
+    <div class="about-box">
+
+      <p>
+        Seeking an opportunity to utilize my skills, knowledge, and abilities while contributing to the growth and success of the organization. Passionate about learning new technologies and improving both technical and creative skills.
+      </p>
+
+    </div>
+
   </section>
+
+  <!-- EDUCATION -->
 
   <section id="education">
+
     <h2>Education</h2>
-    <ul>
-      <li><strong>Bachelor of Science in Computer Science</strong><br>Gobi Arts & Science College-Gobichettipalayam, Tamil Nadu              
-               Full-time | 2023 to Till.
-</li>
-      <li><strong>High School</strong><br>Government Girls Higher Secondary School,Tamilnadu.              
-                State Board | Tamil medium | 2022 to 2023 | Scored: 63%.
-</li>
-    </ul>
+
+    <div class="edu-card">
+      <h3>B.Sc Computer Science</h3>
+      <p>Gobi Arts & Science College, Gobichettipalayam</p>
+      <p>2023 - 2026</p>
+    </div>
+
+    <div class="edu-card">
+      <h3>Higher Secondary Education (HSC)</h3>
+      <p>Government Girls Higher Secondary School, Namibiyur</p>
+      <p>2022 - 2023</p>
+    </div>
+
   </section>
+
+  <!-- SKILLS -->
 
   <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Basics in Front end development : HTML,CSS</li>
-      <li>Basics in Programming  Languages : C,C++,Python</li>
-      <li>Beginner in Photography  and Videography </li>
-      <li>Beginner in Photo and Video editing </li>
 
-    </ul>
+    <h2>Skills</h2>
+
+    <div class="skills-container">
+
+      <div class="skill-card">
+        <h3>HTML & CSS</h3>
+        <p>Frontend Development Basics</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Python</h3>
+        <p>Programming Fundamentals</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Photography</h3>
+        <p>Creative Photography & Videography</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>MS Excel</h3>
+        <p>Basic Spreadsheet Skills</p>
+      </div>
+
+    </div>
+
   </section>
+
+  <!-- PROJECTS -->
 
   <section id="projects">
+
     <h2>Projects</h2>
-    <ul>
-      <li><strong>Portfolio Website:</strong> A personal portfolio site to showcase my work and skills.</li>
-      <li><strong>Photographs</strong> Capturing a beatiful moments and making memories</li>
-    </ul>
+
+    <div class="project-container">
+
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>Personal portfolio website to showcase education, skills, and projects.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Photography</h3>
+        <p>Capturing beautiful moments and creative photography works.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Laundry Management Website</h3>
+        <p>A simple web-based project for managing laundry services.</p>
+      </div>
+
+    </div>
+
   </section>
+
+  <!-- CONTACT -->
 
   <section id="contact">
+
     <h2>Contact Me</h2>
-    <b>Email : <a href="mailto:indhujasubramaniyam@gmail.com"> indhujasubramaniyam@gmail.com</a></b><br><br>
-    <b>Phone : <a href="tel:+91 +91 63813 99357">+91 63813 99357</a></b>
+
+    <div class="contact-box">
+
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:indhujasubramaniyam@gmail.com">
+          indhujasubramaniyam@gmail.com
+        </a>
+      </p>
+
+      <p>
+        <strong>Phone:</strong>
+        <a href="tel:+916381399357">
+          +91 63813 99357
+        </a>
+      </p>
+
+      <p>
+        <strong>LinkedIn:</strong>
+        <a href="#">
+          linkedin.com/in/indhuja-s
+        </a>
+      </p>
+
+    </div>
 
   </section>
 
+  <!-- FOOTER -->
+
   <footer>
-    <p>Portfolio</p>
+
+    <p>© 2026 Indhuja S | All Rights Reserved</p>
+
   </footer>
 
 </body>
